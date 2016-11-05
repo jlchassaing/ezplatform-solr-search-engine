@@ -6,6 +6,7 @@ parameters:
 services:
     ezpublish.search.solr.query.content.facet_builder_visitor.content_type:
         class: "%ezpublish.search.solr.query.content.facet_builder_visitor.content_type.class%"
+        arguments: ["@ezpublish.api.service.content_type", "@ezpublish.api.service.language"]
         tags:
             - {name: ezpublish.search.solr.query.content.facet_builder_visitor}
 
@@ -16,5 +17,6 @@ services:
 
     ezpublish.search.solr.query.content.facet_builder_visitor.user:
         class: "%ezpublish.search.solr.query.content.facet_builder_visitor.user.class%"
+        arguments: ["@ezpublish.api.service.user"]
         tags:
             - {name: ezpublish.search.solr.query.content.facet_builder_visitor}
